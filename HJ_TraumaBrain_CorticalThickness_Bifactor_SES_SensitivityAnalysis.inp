@@ -1,0 +1,472 @@
+TITLE: ABCD W1 Bifactor Desikan CT SES Sensitivity Analysis;
+DATA: FILE is Cortical_Thickness.dat;
+VARIABLE: NAMES ARE 
+subnum_char age FEMALE 
+PSWEIGHT FAMID rel_relationship demorim siten
+white NHWHITE AFRICAN HISPANIC OTHER cbcl01 cbcl03 cbcl04
+cbcl05 cbcl07 cbcl09 cbcl10 cbcl13 cbcl15 cbcl16 cbcl17
+cbcl19 cbcl22 cbcl23 cbcl25 cbcl26 cbcl27 cbcl28 cbcl30
+cbcl31 cbcl32 cbcl33 cbcl34 cbcl35 cbcl36 cbcl37 cbcl39
+cbcl41 cbcl42 cbcl43 cbcl46 cbcl50 cbcl51 cbcl52 cbcl56a
+cbcl56b cbcl56c cbcl56f cbcl56g cbcl56h cbcl57 cbcl61 cbcl62
+cbcl65 cbcl66 cbcl68 cbcl69 cbcl71 cbcl72 cbcl74 cbcl75
+cbcl80 cbcl81 cbcl82 cbcl84 cbcl85 cbcl86 cbcl87 cbcl88
+cbcl89 cbcl90 cbcl93 cbcl94 cbcl95 cbcl97 cbcl102 cbcl103
+cbcl106 cbcl109 cbcl111 cbcl112 ATTEND DESTROY UPPSLPRE UPPSLPER
+UPPSNEG UPPSPOS UPPSSS prosocp prosocy CASHCHOICE RAVLT SUSPEND
+MHSERVICE SPEDE SPEDL cardsort flanker list pattern picture
+PPVT reading wiscv lmt OFFY SINJY HAVETWIN MATAGE
+PREMATURE WEEKSPRE GESTAGE GOTCBCL TICV dti_motion MRIGE MRIP
+MRIS COIL1 COIL2 COIL3 COIL4 COIL5 income income_log
+parent_education mom_education dad_education medication 
+mrif_score fsqc_qc fsqc_qu_motion fsqc_qu_pialover
+fsqc_qu_wmunder fsqc_qu_inhomogeneity dmri_dti_meanmotion 
+ksads754p ksads755p ksads756p ksads757p ksads758p
+ksads759p ksads760p ksads761p ksads762p ksads763p 
+ksads764p ksads765p ksads766p
+ksads767p ksads768p ksads769p ksads770p fes_q1 fes_q2 fes_q3 fes_q4
+fes_q5 fes_q6 fes_q7 fes_q8 fes_q9 fes_1_p fes_2r_p fes_3_p
+fes_4r_p fes_5_p fes_6_p fes_7r_p fes_8_p fes_9_p 
+ct_desikan_mean ct_destrieux_mean
+excluded_missing ct_1 ct_2 ct_3 ct_4 ct_5 ct_6 ct_7
+ct_8 ct_9 ct_10 ct_11 ct_12 ct_13 ct_14 ct_15
+ct_16 ct_17 ct_18 ct_19 ct_20 ct_21 ct_22 ct_23
+ct_24 ct_25 ct_26 ct_27 ct_28 ct_29 ct_30 ct_31
+ct_32 ct_33 ct_34 ct_35 ct_36 ct_37 ct_38 ct_39
+ct_40 ct_41 ct_42 ct_43 ct_44 ct_45 ct_46 ct_47
+ct_48 ct_49 ct_50 ct_51 ct_52 ct_53 ct_54 ct_55
+ct_56 ct_57 ct_58 ct_59 ct_60 ct_61 ct_62 ct_63
+ct_64 ct_65 ct_66 ct_67 ct_68 ct_69 ct_70 ct_71
+ct_72 ct_73 ct_74 ct_75 ct_76 ct_77 ct_78 ct_79
+ct_80 ct_81 ct_82 ct_83 ct_84 ct_85 ct_86 ct_87
+ct_88 ct_89 ct_90 ct_91 ct_92 ct_93 ct_94 ct_95
+ct_96 ct_97 ct_98 ct_99 ct_100 ct_101 ct_102 ct_103
+ct_104 ct_105 ct_106 ct_107 ct_108 ct_109 ct_110 ct_111
+ct_112 ct_113 ct_114 ct_115 ct_116 ct_117 ct_118 ct_119
+ct_120 ct_121 ct_122 ct_123 ct_124 ct_125 ct_126 ct_127
+ct_128 ct_129 ct_130 ct_131 ct_132 ct_133 ct_134 ct_135
+ct_136 ct_137 ct_138 ct_139 ct_140 ct_141 ct_142 ct_143
+ct_144 ct_145 ct_146 ct_147 ct_148 ct_149 ct_150 ct_151
+ct_152 ct_153 ct_154 ct_155 ct_156 ct_157 ct_158 ct_159
+ct_160 ct_161 ct_162 ct_163 ct_164 ct_165 ct_166 ct_167
+ct_168 ct_169 ct_170 ct_171 ct_172 ct_173 ct_174 ct_175
+ct_176 ct_177 ct_178 ct_179 ct_180 ct_181 ct_182 ct_183
+ct_184 ct_185 ct_186 ct_187 ct_188 ct_189 ct_190 ct_191
+ct_192 ct_193 ct_194 ct_195 ct_196 ct_197 ct_198 ct_199
+ct_200 ct_201 ct_202 ct_203 ct_204 ct_205 ct_206 ct_207
+ct_208 ct_209 ct_210 ct_211 ct_212 ct_213 ct_214 ct_215
+ct_216 ct_217 ct_218 ct_219 ct_220 ct_221 ct_222 ct_223
+ct_224 ct_225 ct_226 ct_227 ct_228 ct_229 ct_230 ct_231
+ct_232 ct_233 ct_234 ct_235 ct_236 ct_237 ct_238 ct_239
+ct_240 ct_241 ct_242 ct_243 ct_244 ct_245 ct_246 ct_247
+ct_248 ct_249 ct_250 ct_251 ct_252 ct_253 ct_254 ct_255
+ct_256 ct_257 ct_258 ct_1_R ct_2_R ct_3_R ct_4_R ct_5_R
+ct_6_R ct_7_R ct_8_R ct_9_R ct_10_R ct_11_R ct_12_R ct_13_R
+ct_14_R ct_15_R ct_16_R ct_17_R ct_18_R ct_19_R ct_20_R ct_21_R
+ct_22_R ct_23_R ct_24_R ct_25_R ct_26_R ct_27_R ct_28_R ct_29_R
+ct_30_R ct_31_R ct_32_R ct_33_R ct_34_R ct_35_R ct_36_R ct_37_R
+ct_38_R ct_39_R ct_40_R ct_41_R ct_42_R ct_43_R ct_44_R ct_45_R
+ct_46_R ct_47_R ct_48_R ct_49_R ct_50_R ct_51_R ct_52_R ct_53_R
+ct_54_R ct_55_R ct_56_R ct_57_R ct_58_R ct_59_R ct_60_R ct_61_R
+ct_62_R ct_63_R ct_64_R ct_65_R ct_66_R ct_67_R ct_68_R ct_105_R
+ct_106_R ct_108_R ct_109_R ct_110_R ct_111_R ct_112_R ct_113_R ct_114_R
+ct_115_R ct_116_R ct_117_R ct_118_R ct_119_R ct_120_R ct_121_R ct_122_R
+ct_123_R ct_124_R ct_125_R ct_126_R ct_127_R ct_128_R ct_129_R ct_130_R
+ct_131_R ct_132_R ct_133_R ct_134_R ct_135_R ct_136_R ct_137_R ct_138_R
+ct_139_R ct_140_R ct_141_R ct_142_R ct_143_R ct_144_R ct_145_R ct_146_R
+ct_147_R ct_148_R ct_149_R ct_150_R ct_151_R ct_152_R ct_153_R ct_154_R
+ct_155_R ct_156_R ct_157_R ct_158_R ct_159_R ct_160_R ct_161_R ct_162_R
+ct_163_R ct_164_R ct_165_R ct_166_R ct_167_R ct_168_R ct_169_R ct_170_R
+ct_171_R ct_172_R ct_173_R ct_174_R ct_175_R ct_176_R ct_177_R ct_178_R
+ct_179_R ct_180_R ct_181_R ct_182_R ct_183_R ct_184_R ct_185_R ct_186_R
+ct_187_R ct_188_R ct_189_R ct_190_R ct_191_R ct_192_R ct_193_R ct_194_R
+ct_195_R ct_196_R ct_197_R ct_198_R ct_199_R ct_200_R ct_201_R ct_202_R
+ct_203_R ct_204_R ct_205_R ct_206_R ct_207_R ct_208_R ct_209_R ct_210_R
+ct_211_R ct_212_R ct_213_R ct_214_R ct_215_R ct_216_R ct_217_R ct_218_R
+ct_219_R ct_220_R ct_221_R ct_222_R ct_223_R ct_224_R ct_225_R ct_226_R
+ct_227_R ct_228_R ct_229_R ct_230_R ct_231_R ct_232_R ct_233_R ct_234_R
+ct_235_R ct_236_R ct_237_R ct_238_R ct_239_R ct_240_R ct_241_R ct_242_R
+ct_243_R ct_244_R ct_245_R ct_246_R ct_247_R ct_248_R ct_249_R ct_250_R
+ct_251_R ct_252_R ct_253_R ct_254_R ct_255_R ct_256_R ct_257_R;
+
+    USEVARIABLES ARE cbcl01 cbcl03 cbcl04
+    cbcl07 cbcl09 cbcl10
+    cbcl13 cbcl15 cbcl16
+    cbcl17 cbcl19 cbcl22 cbcl23
+    cbcl25 cbcl26 cbcl27 cbcl28
+    cbcl30 cbcl31 cbcl32 cbcl33 cbcl34
+    cbcl35 cbcl37 cbcl39 cbcl41
+    cbcl43 cbcl46
+    cbcl50 cbcl51 cbcl52 cbcl56a
+    cbcl56b cbcl56c cbcl56f cbcl56g
+    cbcl57 cbcl61 cbcl62 cbcl66  cbcl68
+    cbcl71 cbcl72 cbcl74 cbcl75
+    cbcl80 cbcl81 cbcl82 cbcl84
+    cbcl85 cbcl86 cbcl87 cbcl88 cbcl89
+    cbcl90 cbcl94
+    cbcl95 cbcl97 cbcl102 cbcl103
+    cbcl106 cbcl109 cbcl111 cbcl112
+    ATTEND DESTROY FEMALE AGE
+    NHWHITE AFRICAN HISPANIC
+    COIL2 COIL3 COIL4 COIL5
+    ct_1-ct_68 ct_desikan_mean
+    income parent_education;
+
+    CATEGORICAL=cbcl01 cbcl03 cbcl04
+    cbcl07 cbcl09 cbcl10
+    cbcl13 cbcl15 cbcl16
+    cbcl17 cbcl19 cbcl22 cbcl23
+    cbcl25 cbcl26 cbcl27 cbcl28
+    cbcl30 cbcl31 cbcl32 cbcl33 cbcl34
+    cbcl35 cbcl37 cbcl39 cbcl41
+    cbcl43 cbcl46
+    cbcl50 cbcl51 cbcl52 cbcl56a
+    cbcl56b cbcl56c cbcl56f cbcl56g
+    cbcl57 cbcl61 cbcl62 cbcl66  cbcl68
+    cbcl71 cbcl72 cbcl74 cbcl75
+    cbcl80 cbcl81 cbcl82 cbcl84
+    cbcl85 cbcl86 cbcl87 cbcl88 cbcl89
+    cbcl90 cbcl94
+    cbcl95 cbcl97 cbcl102 cbcl103
+    cbcl106 cbcl109 cbcl111 cbcl112
+    ATTEND DESTROY;
+    
+    MISSING ARE .;
+    WEIGHT = PSWEIGHT;
+    STRATIFICATION=SITEN;
+    IDVARIABLE = subnum_char;
+    CLUSTER=FAMID;
+
+    DEFINE: STANDARDIZE 
+    ct_1-ct_68 ct_desikan_mean;
+
+    ANALYSIS:
+    ESTIMATOR=WLSMV;
+    ITERATIONS=500000;
+    TYPE=COMPLEX;
+    PROCESSORS=12;
+
+    MODEL:
+
+    [GENERAL@0]; [INT@0]; [EXT@0]; [ADHD@0];
+    GENERAL@1; INT@1; EXT@1; ADHD@1;
+
+    GENERAL BY CBCL01*.9 cbcl03 cbcl04
+    cbcl07 cbcl09 cbcl10
+    cbcl13 cbcl15 cbcl16
+    cbcl17 cbcl19 cbcl22 cbcl23
+    cbcl25 cbcl26 cbcl27 cbcl28
+    cbcl30 cbcl31 cbcl32 cbcl33 cbcl34
+    cbcl35 cbcl37 cbcl39 cbcl41
+    cbcl43 cbcl46
+    cbcl50 cbcl51 cbcl52 cbcl56a
+    cbcl56b cbcl56c cbcl56f cbcl56g
+    cbcl57 cbcl61 cbcl62 cbcl66 cbcl68
+    cbcl71 cbcl72 cbcl74 cbcl75
+    cbcl80 cbcl81 cbcl82 cbcl84
+    cbcl85 cbcl86 cbcl87 cbcl88 cbcl89
+    cbcl90 cbcl94
+    cbcl95 cbcl97 cbcl102 cbcl103
+    cbcl106 cbcl109 cbcl111 cbcl112
+    ATTEND DESTROY;
+
+    EXT BY CBCL03*.8 CBCL07 CBCL15 CBCL16
+    cbcl19 cbcl22 cbcl23
+    cbcl25 cbcl26 cbcl27 cbcl28 cbcl34
+    cbcl37 cbcl39
+    cbcl43 cbcl57 cbcl68 cbcl72 cbcl74
+    cbcl81 cbcl82 cbcl86 cbcl87 cbcl88
+    cbcl89 cbcl90 cbcl94 cbcl95 cbcl97
+    cbcl106 cbcl109 DESTROY;
+
+    ADHD BY CBCL01*.8 cbcl04 cbcl09 cbcl10
+    cbcl13 cbcl17 cbcl41 cbcl46 cbcl61
+    cbcl62 cbcl66 cbcl80 cbcl84 cbcl85
+    ATTEND;
+
+    INT BY CBCL30*.8 CBCL31 CBCL32 cbcl33
+    CBCL35 CBCL50 cbcl51 CBCL52
+    cbcl56a CBCL56B CBCL56C CBCL56F
+    CBCL56G CBCL71 CBCL75
+    CBCL102 CBCL103 CBCL111 CBCL112;
+
+    GENERAL WITH INT @0;
+    GENERAL WITH EXT @0;
+    GENERAL WITH ADHD @0;
+    INT WITH EXT @0;
+    ADHD WITH EXT @0; ADHD WITH INT @0;
+
+  ct_1 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_2 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_3 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_4 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_5 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_6 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_7 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_8 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_9 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_10 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_11 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_12 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_13 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_14 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_15 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_16 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_17 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_18 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_19 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_20 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_21 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_22 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_23 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_24 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_25 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_26 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_27 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_28 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_29 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_30 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_31 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_32 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_33 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_34 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_35 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_36 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_37 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_38 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_39 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_40 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_41 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_42 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_43 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_44 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_45 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_46 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_47 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_48 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_49 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_50 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_51 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_52 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_53 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_54 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_55 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_56 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_57 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_58 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_59 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_60 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_61 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_62 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_63 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_64 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_65 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_66 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_67 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+  ct_68 ON EXT GENERAL INT ADHD FEMALE AGE
+  NHWHITE AFRICAN HISPANIC COIL2 COIL3 COIL4 COIL5 
+  ct_desikan_mean income parent_education;
+
+
+OUTPUT: SAMPSTAT STDYX;
